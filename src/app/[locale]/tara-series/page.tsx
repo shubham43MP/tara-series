@@ -58,7 +58,7 @@ export default function Home() {
       });
     });
     return rulingLordUnique
-  }, [])
+  }, [transposedNakshatra])
 
   return (
     <main className="flex relative h-screen justify-center flex-col gap-10 items-center">

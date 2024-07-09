@@ -44,7 +44,7 @@ export default function Home() {
     setOrderedNakshatra(reordered);
   };
 
-  const transposedNakshatra = transposeArray(orderedNakshatra);
+  const transposedNakshatra = useMemo(() => transposeArray(orderedNakshatra), [orderedNakshatra]);
 
   const uniqueLords = useMemo(() => {
     const rulingLordUnique: string[] = [];
@@ -59,7 +59,7 @@ export default function Home() {
       });
     });
     return rulingLordUnique
-  }, [])
+  }, [transposedNakshatra])
 
   return (
     <main className="flex relative h-screen justify-center flex-col gap-10 items-center">
