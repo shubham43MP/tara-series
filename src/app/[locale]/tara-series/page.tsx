@@ -1,15 +1,15 @@
-"use client";
-import AutoCompleteSelect from "@/components/AutoComplete";
-import NakshatraLordTable from "@/components/Table/NakshatraLordTable";
-import NakshatraTable from "@/components/Table/NakshatraTable";
-import NavtaraTable from "@/components/Table/NavtaraTable";
-import { nakshatraList, taraChakra, transposeArray } from "@/constants/helper";
-import Images from "@/constants/images";
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+'use client';
+import AutoCompleteSelect from '@/components/AutoComplete';
+import NakshatraLordTable from '@/components/Table/NakshatraLordTable';
+import NakshatraTable from '@/components/Table/NakshatraTable';
+import NavtaraTable from '@/components/Table/NavtaraTable';
+import { nakshatraList, taraChakra, transposeArray } from '@/constants/helper';
+import Images from '@/constants/images';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useMemo, useState } from 'react';
 
 interface Nakshatra {
   id: number;
@@ -26,19 +26,18 @@ export default function Home() {
     label: string;
   }>({
     value: 0,
-    label: "",
+    label: ''
   });
   const t = useTranslations();
-  console.log('routerrr', router)
 
   const handleSelect = (selectedOption: { value: number; label: string }) => {
     setSelectedNakshatra(selectedOption);
     const index = nakshatraList.findIndex(
-      (nak) => nak.id === selectedOption.value
+      nak => nak.id === selectedOption.value
     );
     const reordered = [
       ...nakshatraList.slice(index),
-      ...nakshatraList.slice(0, index),
+      ...nakshatraList.slice(0, index)
     ];
     setOrderedNakshatra(reordered);
   };
@@ -47,18 +46,18 @@ export default function Home() {
 
   const uniqueLords = useMemo(() => {
     const rulingLordUnique: string[] = [];
-    transposedNakshatra.forEach((col) => {
+    transposedNakshatra.forEach(col => {
       const lordsInCol = Array.from(
-        new Set(col.map((nakshatra) => nakshatra.lord))
+        new Set(col.map(nakshatra => nakshatra.lord))
       );
-      lordsInCol.forEach((lord) => {
+      lordsInCol.forEach(lord => {
         if (!rulingLordUnique.includes(lord)) {
           rulingLordUnique.push(lord);
         }
       });
     });
-    return rulingLordUnique
-  }, [])
+    return rulingLordUnique;
+  }, [transposedNakshatra]);
 
   return (
     <main className="flex relative h-screen justify-center flex-col gap-10 items-center">
@@ -69,16 +68,17 @@ export default function Home() {
       />
       <div>
         <AutoCompleteSelect
-          options={nakshatraList.map((nak) => ({
+          options={nakshatraList.map(nak => ({
             value: nak.id,
-            label: nak.name,
+            label: nak.name
           }))}
           handleSelect={handleSelect}
           searchPlaceholder={t('generic.searchConstellation')}
         />
         {selectedNakshatra.label.length > 0 && (
           <p className="text-center mt-2">
-            Your birth constellation: {t(`nakshatraList.${selectedNakshatra.label}`)}
+            Your birth constellation:{' '}
+            {t(`nakshatraList.${selectedNakshatra.label}`)}
           </p>
         )}
       </div>

@@ -1,24 +1,24 @@
-"use client";
-import { useTranslations } from "next-intl";
-import React, { useState } from "react";
-import { AutoCompleteProps } from "./autocomplete.interface";
+'use client';
+import { useTranslations } from 'next-intl';
+import React, { useState } from 'react';
+import { AutoCompleteProps } from './autocomplete.interface';
 
 const AutoCompleteSelect = ({
   options,
   handleSelect,
   searchPlaceholder
 }: AutoCompleteProps) => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>('');
   const [showList, setShowList] = useState<boolean>(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
 
   const [filteredOptions, setFilteredOptions] =
     useState<{ value: number; label: string }[]>(options);
-  const t = useTranslations("nakshatraList");
+  const t = useTranslations('nakshatraList');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
-    const filtered = options.filter((option) =>
+    const filtered = options.filter(option =>
       option.label.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredOptions(filtered);
@@ -26,7 +26,7 @@ const AutoCompleteSelect = ({
 
   const handleOptionClick = (option: { value: number; label: string }) => {
     handleSelect(option);
-    setSearchTerm("");
+    setSearchTerm('');
     setFilteredOptions(options);
     setShowList(false);
   };
@@ -63,8 +63,8 @@ const AutoCompleteSelect = ({
               onMouseEnter={() => handleMouseEnter(index)}
               className={`cursor-pointer p-2 ${
                 highlightedIndex === index
-                  ? "bg-purple-500 text-white"
-                  : "bg-white text-black"
+                  ? 'bg-purple-500 text-white'
+                  : 'bg-white text-black'
               } hover:bg-purple-500 hover:text-white transition-colors duration-200`}
             >
               {t(option.label)}

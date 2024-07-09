@@ -1,12 +1,12 @@
-import { useTranslations } from "next-intl";
-import React from "react";
+import { useTranslations } from 'next-intl';
+import React from 'react';
 
 const NakshatraTable = ({ transposedNakshatra }: any) => {
-  const t = useTranslations("nakshatraList");
+  const t = useTranslations('nakshatraList');
 
   return (
     <div>
-      <p className="text-center text-2xl font-semibold">{t("title")}</p>
+      <p className="text-center text-2xl font-semibold">{t('title')}</p>
       <div className="grid grid-cols-3 gap-2">
         {transposedNakshatra.map(
           (col: any[], colIndex: React.Key | null | undefined) => (

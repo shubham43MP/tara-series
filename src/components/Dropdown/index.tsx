@@ -1,24 +1,24 @@
-import { useTranslations } from "next-intl";
-import { ChangeEvent } from "react";
+import { useTranslations } from 'next-intl';
+import { ChangeEvent } from 'react';
 
 const Dropdown = ({
   options,
   handleSelect,
   label,
-  value,
+  value
 }: {
   options: { label: string; value: number }[];
   handleSelect: (value: number) => void;
   label: string;
   value: number;
 }) => {
-  const t = useTranslations("rashi");
+  const t = useTranslations('rashi');
   const onOptionChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = Number(e.target.value);
     handleSelect(value);
   };
   if (options.length < 1) {
-    return "No data.";
+    return 'No data.';
   }
   return (
     <>
@@ -34,7 +34,7 @@ const Dropdown = ({
         value={value}
         onChange={onOptionChangeHandler}
       >
-        {options.map((option) => (
+        {options.map(option => (
           <option key={option.value} value={option.value}>
             {t(option.label)}
           </option>
