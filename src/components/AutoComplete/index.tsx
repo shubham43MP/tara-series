@@ -1,14 +1,13 @@
 "use client";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
+import { AutoCompleteProps } from "./autocomplete.interface";
 
 const AutoCompleteSelect = ({
   options,
   handleSelect,
-}: {
-  options: { value: number; label: string }[];
-  handleSelect: (selectedOption: { value: number; label: string }) => void;
-}) => {
+  searchPlaceholder
+}: AutoCompleteProps) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [showList, setShowList] = useState<boolean>(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
@@ -52,7 +51,7 @@ const AutoCompleteSelect = ({
         onChange={handleChange}
         onFocus={handleShowList}
         onBlur={handleHideList}
-        placeholder="Search Constellation..."
+        placeholder={searchPlaceholder}
         className="outline-none border border-purple-500 bg-transparent w-96 p-2 rounded-xl placeholder:text-white text-white"
       />
       {showList && filteredOptions.length > 0 && (

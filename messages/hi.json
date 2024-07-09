@@ -1,4 +1,7 @@
 {
+  "generic": {
+    "searchConstellation": "आपका जन्म नक्षत्र..."
+  },
   "home": {
     "title": "तारा कैलकुलेटर",
     "goBack": "वापस जाएं"
@@ -33,7 +36,7 @@
     "bharani": "भरणी",
     "krittika": "कृत्तिका",
     "rohini": "रोहिणी",
-    "mrigashira": "मृगशीर्षा",
+    "mrigashira": "मृगशिरा",
     "ardra": "आर्द्रा",
     "punarvasu": "पुनर्वसु",
     "pushya": "पुष्य",

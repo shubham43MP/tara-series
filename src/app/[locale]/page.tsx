@@ -25,7 +25,7 @@ export default function Home() {
     value: 0,
     label: "",
   });
-  const t = useTranslations("nakshatraList");
+  const t = useTranslations();
 
   const handleSelect = (selectedOption: { value: number; label: string }) => {
     setSelectedNakshatra(selectedOption);
@@ -76,10 +76,11 @@ export default function Home() {
             label: nak.name,
           }))}
           handleSelect={handleSelect}
+          searchPlaceholder={t('generic.searchConstellation')}
         />
         {selectedNakshatra.label.length > 0 && (
           <p className="text-center mt-2">
-            Your birth constellation: {t(selectedNakshatra.label)}
+            Your birth constellation: {t(`nakshatraList.${selectedNakshatra.label}`)}
           </p>
         )}
       </div>

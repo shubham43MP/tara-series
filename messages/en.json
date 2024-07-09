@@ -1,4 +1,7 @@
 {
+  "generic": {
+    "searchConstellation": "Your Birth Constellation..."
+  },
   "home": {
     "title": "Tara Calculator",
     "goBack": "Go Back"
