@@ -29,7 +29,6 @@ export default function Home() {
     label: ''
   });
   const t = useTranslations();
-  console.log('routerrr', router);
 
   const handleSelect = (selectedOption: { value: number; label: string }) => {
     setSelectedNakshatra(selectedOption);
@@ -59,8 +58,6 @@ export default function Home() {
     });
     return rulingLordUnique;
   }, [transposedNakshatra]);
-
-  console.log('');
 
   return (
     <main className="flex relative h-screen justify-center flex-col gap-10 items-center">

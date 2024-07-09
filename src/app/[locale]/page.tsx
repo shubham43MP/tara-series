@@ -35,8 +35,6 @@ export default function Home() {
   const t = useTranslations();
   const router = useRouter();
 
-  console.log({ router });
-
   const handleSelect = (selectedOption: { value: number; label: string }) => {
     setSelectedNakshatra(selectedOption);
     const index = nakshatraList.findIndex(
@@ -69,7 +67,7 @@ export default function Home() {
     return rulingLordUnique;
   }, [transposedNakshatra]);
 
-  console.log('');
+  console.log('s');
 
   return (
     <main className="flex relative h-screen justify-center flex-col gap-10 items-center">
