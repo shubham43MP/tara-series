@@ -1,6 +1,8 @@
 {
   "generic": {
-    "searchConstellation": "आपका जन्म नक्षत्र..."
+    "searchConstellation": "आपका जन्म नक्षत्र...",
+    "selectAscendant": "जन्म लग्न",
+    "selectMoonRashi": "जन्म राशि"
   },
   "home": {
     "title": "तारा कैलकुलेटर",

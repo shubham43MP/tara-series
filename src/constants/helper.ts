@@ -158,6 +158,11 @@ const transposeArray = <T>(array: T[]): T[][] => {
   return transposed;
 };
 
+const APP_ROUTES = {
+  TRANSIT: '/transit',
+  TARASERIES: '/tara-series'
+}
+
 export {
   nakshatraList,
   taraChakra,
@@ -165,5 +170,6 @@ export {
   rashifalzero,
   rashifal1,
   zodiacSign,
-  transposeArray
+  APP_ROUTES,
+  transposeArray,
 };

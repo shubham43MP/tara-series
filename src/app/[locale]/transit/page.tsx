@@ -62,7 +62,7 @@ const Rashifal = () => {
               value={Number(asc)}
               options={zodiacSign}
               handleSelect={handleChangeAscendant}
-              label={"Select Ascendant"}
+              label={t('generic.selectAscendant')}
             />
             {ascendantPlanetaryPosition && (
               <RashifalChart chartData={ascendantPlanetaryPosition} />
@@ -74,7 +74,7 @@ const Rashifal = () => {
               value={Number(moon)}
               options={zodiacSign}
               handleSelect={handleChangeMoon}
-              label={"Select Moon"}
+              label={t('generic.selectMoonRashi')}
             />
             {moonPlanetaryPosition && (
               <RashifalChart chartData={moonPlanetaryPosition} />

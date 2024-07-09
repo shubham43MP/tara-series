@@ -3,7 +3,7 @@ import AutoCompleteSelect from "@/components/AutoComplete";
 import NakshatraLordTable from "@/components/Table/NakshatraLordTable";
 import NakshatraTable from "@/components/Table/NakshatraTable";
 import NavtaraTable from "@/components/Table/NavtaraTable";
-import { APP_ROUTES, nakshatraList, taraChakra, transposeArray } from "@/constants/helper";
+import { nakshatraList, taraChakra, transposeArray } from "@/constants/helper";
 import Images from "@/constants/images";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -18,6 +18,7 @@ interface Nakshatra {
 }
 
 export default function Home() {
+  const router = useRouter();
   const [orderedNakshatra, setOrderedNakshatra] =
     useState<Nakshatra[]>(nakshatraList);
   const [selectedNakshatra, setSelectedNakshatra] = useState<{
@@ -28,9 +29,7 @@ export default function Home() {
     label: "",
   });
   const t = useTranslations();
-  const router = useRouter();
-
-  console.log({router})
+  console.log('routerrr', router)
 
   const handleSelect = (selectedOption: { value: number; label: string }) => {
     setSelectedNakshatra(selectedOption);
@@ -68,7 +67,7 @@ export default function Home() {
         alt="background"
         src={Images.backgroundImage2}
       />
-      <Link href={APP_ROUTES.TRANSIT} className="home--page-transitbutton" >
+      <Link href={'/transit'} className="home--page-transitbutton" >
         Go To Transit
       </Link>
       <div>

@@ -1,6 +1,8 @@
 {
   "generic": {
-    "searchConstellation": "Your Birth Constellation..."
+    "searchConstellation": "Your Birth Constellation...",
+    "selectAscendant": "Select Ascendant",
+    "selectMoonRashi": "Select Moon Sign"
   },
   "home": {
     "title": "Tara Calculator",
