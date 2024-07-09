@@ -19,13 +19,10 @@ export default function LocalSwitcher() {
   const pathname = usePathname();
 
   const url = `${pathname}?${searchParams}`;
-  console.log(url);
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = e.target.value;
-    console.log({ params, pathname }, "heaskasdkopasdk");
     const newPath = pathname.replace(`/${localActive}`, `/${nextLocale}`);
     const newUrl = `${newPath}?${searchParams}`;
-    console.log(`${newPath}?${searchParams}`, "newPathnewPathnewPath");
     startTransition(() => {
       router.replace(newUrl);
     });

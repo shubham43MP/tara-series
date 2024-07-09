@@ -48,7 +48,6 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
 
   const isValidData = () => {
     const keys = Object.keys(chartData).map(Number);
-    console.log(keys, "keyskeyskeyskeys");
     const allKeysPresent = Array.from({ length: 12 }, (_, i) => i + 1).every(
       (key) => keys.includes(key)
     );
@@ -116,8 +115,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house2"
         />
         <text
-          x="245"
-          y="242"
+          x="240"
+          y="225"
           font-family="Verdana"
           font-size="20"
           fontWeight={600}

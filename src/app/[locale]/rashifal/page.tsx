@@ -31,11 +31,8 @@ const Rashifal = () => {
   };
 
   const handlePlanetPosition = (selectedValue: number) => {
-    if (selectedValue) {
-      const selectedAscendantNumber = zodiacSign.findIndex(
-        (item) => item.value == selectedValue
-      );
-      return transitBasedChakra(selectedAscendantNumber);
+    if (selectedValue) {  
+      return transitBasedChakra(selectedValue);
     }
     return null;
   };
@@ -49,7 +46,7 @@ const Rashifal = () => {
     () => handlePlanetPosition(selectedMoon),
     [selectedMoon]
   );
-  console.log({ asc, moon }, "hello world");
+
   return (
     <div className="text-black  p-2 min-h-screen">
       <button
