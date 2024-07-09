@@ -1,0 +1,89 @@
+{
+  "home": {
+    "title": "Tara Calculator",
+    "goBack": "Go Back"
+  },
+  "navtara": {
+    "title": "Tara Chakra",
+    "janma": "Janma",
+    "sampat": "Sampat",
+    "vipat": "Vipat",
+    "kshema": "Kshema",
+    "pratyari": "Pratyari",
+    "sadhak": "Sadhak",
+    "vadha": "Vadha",
+    "mitra": "Mitra",
+    "atimitra": "Atimitra"
+  },
+  "nakshatraList": {
+    "title": "Constellation",
+    "ashwini": "Ashwini",
+    "bharani": "Bharani",
+    "krittika": "Krittika",
+    "rohini": "Rohini",
+    "mrigashira": "Mrigashira",
+    "ardra": "Ardra",
+    "punarvasu": "Punarvasu",
+    "pushya": "Pushya",
+    "ashlesha": "Ashlesha",
+    "magha": "Magha",
+    "purvaPhalguni": "Purva Phalguni",
+    "uttaraPhalguni": "Uttara Phalguni",
+    "hasta": "Hasta",
+    "chitra": "Chitra",
+    "swati": "Swati",
+    "vishakha": "Vishakha",
+    "anuradha": "Anuradha",
+    "jyeshtha": "Jyeshtha",
+    "mula": "Mula",
+    "purvaAshadha": "Purva Ashadha",
+    "uttaraAshadha": "Uttara Ashadha",
+    "shravana": "Shravana",
+    "dhanishta": "Dhanishta",
+    "shatabhisha": "Shatabhisha",
+    "purvaBhadrapada": "Purva Bhadrapada",
+    "uttaraBhadrapada": "Uttara Bhadrapada",
+    "revati": "Revati"
+  },
+  "nakshatraLord": {
+    "title": "Constellation Lords",
+    "ketu": "Ketu",
+    "venus": "Venus",
+    "sun": "Sun",
+    "moon": "Moon",
+    "mars": "Mars",
+    "rahu": "Rahu",
+    "jupiter": "Jupiter",
+    "saturn": "Saturn",
+    "mercury": "Mercury"
+  },
+  "planetList": {
+    "sun": "Su",
+    "moon": "Mo",
+    "mars": "Ma",
+    "mercury": "Me",
+    "venus": "Ve",
+    "ketu": "Ke",
+    "rahu": "Ra",
+    "jupiter": "Ju",
+    "saturn": "Sa"
+  },
+  "chart": {
+    "asc": "Ascendant Chart",
+    "moon": "Moon Chart"
+  },
+  "rashi": {
+    "aries": "Aries",
+    "taurus": "Taurus",
+    "gemini": "Gemini",
+    "cancer": "Cancer",
+    "leo": "Leo",
+    "virgo": "Virgo",
+    "libra": "Libra",
+    "scorpio": "Scorpio",
+    "sagittarius": "Sagittarius",
+    "capricorn": "Capricorn",
+    "aquarius": "Aquarius",
+    "pisces": "Pisces"
+  }
+}
