@@ -49,12 +49,6 @@ const Rashifal = () => {
 
   return (
     <div className="text-black  p-2 min-h-screen">
-      <button
-        className="border border-gray-600 hover:border-purple-500 hover:text-purple-500 text-sm py-1 px-2 rounded-lg text-gray-600"
-        onClick={() => router.back()}
-      >
-        {t("home.goBack")}
-      </button>
       <div className="flex justify-center items-center flex-col">
         <div className="grid  lg:grid-cols-2 grid-cols-1  gap-5">
           <div className="flex flex-col gap-2 items-center ">
@@ -62,7 +56,7 @@ const Rashifal = () => {
               value={Number(asc)}
               options={zodiacSign}
               handleSelect={handleChangeAscendant}
-              label={"Select Ascendant"}
+              label={t('generic.selectAscendant')}
             />
             {ascendantPlanetaryPosition && (
               <RashifalChart chartData={ascendantPlanetaryPosition} />
@@ -74,7 +68,7 @@ const Rashifal = () => {
               value={Number(moon)}
               options={zodiacSign}
               handleSelect={handleChangeMoon}
-              label={"Select Moon"}
+              label={t('generic.selectMoonRashi')}
             />
             {moonPlanetaryPosition && (
               <RashifalChart chartData={moonPlanetaryPosition} />

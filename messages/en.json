@@ -1,9 +1,13 @@
 {
   "generic": {
-    "searchConstellation": "Your Birth Constellation..."
+    "searchConstellation": "Your Birth Constellation...",
+    "selectAscendant": "Select Ascendant",
+    "selectMoonRashi": "Select Moon Sign",
+    "transit": "Transit",
+    "taraSeries": "Tara Series"
   },
   "home": {
-    "title": "Tara Calculator",
+    "title": "Hindu Astro",
     "goBack": "Go Back"
   },
   "navtara": {
