@@ -1,10 +1,10 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 
 const NavtaraTable = ({ taraChakra }: { taraChakra: string[] }) => {
-  const t = useTranslations("navtara");
+  const t = useTranslations('navtara');
   return (
     <div>
-      <p className="text-center text-2xl font-semibold">{t("title")}</p>
+      <p className="text-center text-2xl font-semibold">{t('title')}</p>
       <div className="grid grid-cols-1">
         {taraChakra.map((tara, index) => (
           <div

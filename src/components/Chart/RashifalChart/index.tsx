@@ -1,5 +1,5 @@
-import { useTranslations } from "next-intl";
-import * as React from "react";
+import { useTranslations } from 'next-intl';
+import * as React from 'react';
 
 interface IData {
   id: number;
@@ -15,56 +15,56 @@ interface IRashiFalData {
 const getPositionStyles = (houseNumber: number) => {
   switch (houseNumber) {
     case 1:
-      return "top-[165px] left-[263px]";
+      return 'top-[165px] left-[263px]';
     case 2:
-      return "top-[90px] left-[148px]";
+      return 'top-[90px] left-[148px]';
     case 3:
-      return "top-[165px] left-[76px]";
+      return 'top-[165px] left-[76px]';
     case 4:
-      return "top-[270px] left-[148px]";
+      return 'top-[270px] left-[148px]';
     case 5:
-      return "top-[388px] left-[76px]";
+      return 'top-[388px] left-[76px]';
     case 6:
-      return "top-[462px] left-[148px]";
+      return 'top-[462px] left-[148px]';
     case 7:
-      return "top-[388px] left-[263px]";
+      return 'top-[388px] left-[263px]';
     case 8:
-      return "top-[462px] left-[375px]";
+      return 'top-[462px] left-[375px]';
     case 9:
-      return "top-[388px] left-[442px]";
+      return 'top-[388px] left-[442px]';
     case 10:
-      return "top-[270px] left-[375px]";
+      return 'top-[270px] left-[375px]';
     case 11:
-      return "top-[165px] left-[442px]";
+      return 'top-[165px] left-[442px]';
     case 12:
-      return "top-[90px] left-[375px]";
+      return 'top-[90px] left-[375px]';
     default:
-      return "";
+      return '';
   }
 };
 
 const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
-  const t = useTranslations("planetList");
+  const t = useTranslations('planetList');
 
   const isValidData = () => {
     const keys = Object.keys(chartData).map(Number);
     const allKeysPresent = Array.from({ length: 12 }, (_, i) => i + 1).every(
-      (key) => keys.includes(key)
+      key => keys.includes(key)
     );
     const validIdsAndPlanets = Object.values(chartData).every(
-      (house) =>
-        typeof house.id === "number" &&
+      house =>
+        typeof house.id === 'number' &&
         Array.isArray(house.planets) &&
-        house.planets.every((planet) => typeof planet === "string")
+        house.planets.every(planet => typeof planet === 'string')
     );
     return allKeysPresent && validIdsAndPlanets;
   };
 
   if (!chartData || Object.keys(chartData).length !== 12 || !isValidData()) {
-    return "Data is wrong";
+    return 'Data is wrong';
   }
 
-  let containerClass = "flex flex-wrap gap-1.5 items-center justify-center";
+  let containerClass = 'flex flex-wrap gap-1.5 items-center justify-center';
 
   return (
     <div className="relative">
@@ -94,7 +94,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 1 --> */}
         <polygon
           points="400 100,250 250,400 400,550 250"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house1"
         />
         <text
@@ -111,7 +111,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 2 --> */}
         <polygon
           points="100 100, 250 250,400 100"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house2"
         />
         <text
@@ -128,7 +128,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 3 --> */}
         <polygon
           points="100 400,250 250,100 100"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house3"
         />
         <text
@@ -145,7 +145,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 4 --> */}
         <polygon
           points="250 250,100 400,250 550,400 400"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house4"
         />
         <text
@@ -162,7 +162,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 5 --> */}
         <polygon
           points="100 400,250 550,100 700"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house5"
         />
         <text
@@ -179,7 +179,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 6 --> */}
         <polygon
           points="100 700,250 550,400 700"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house6"
         />
         <text
@@ -196,7 +196,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 7 --> */}
         <polygon
           points="400 400,250 550,400 700,550 550"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house7"
         />
         <text
@@ -213,7 +213,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 8 --> */}
         <polygon
           points="400 700,550 550,700 700"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house8"
         />
         <text
@@ -230,7 +230,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 9 --> */}
         <polygon
           points="700 400,550 550,700 700"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house9"
         />
         <text
@@ -247,7 +247,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 10 --> */}
         <polygon
           points="550 250,700 400,550 550,400 400"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house10"
         />
         <text
@@ -264,7 +264,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 11 --> */}
         <polygon
           points="700 100,550 250,700 400"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house11"
         />
         <text
@@ -281,7 +281,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         {/* <!-- House 12 --> */}
         <polygon
           points="400 100,550 250,700 100"
-          style={{ fill: "none", stroke: "#000", strokeWidth: 1 }}
+          style={{ fill: 'none', stroke: '#000', strokeWidth: 1 }}
           id="house12"
         />
         <text

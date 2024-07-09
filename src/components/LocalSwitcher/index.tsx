@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useLocale } from "next-intl";
+import { useLocale } from 'next-intl';
 import {
   useParams,
   usePathname,
   useRouter,
-  useSearchParams,
-} from "next/navigation";
-import { ChangeEvent, useTransition } from "react";
+  useSearchParams
+} from 'next/navigation';
+import { ChangeEvent, useTransition } from 'react';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();

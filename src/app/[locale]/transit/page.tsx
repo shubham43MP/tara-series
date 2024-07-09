@@ -1,18 +1,18 @@
-"use client";
-import RashifalChart from "@/components/Chart/RashifalChart";
-import Dropdown from "@/components/Dropdown";
-import { transitBasedChakra, zodiacSign } from "@/constants/helper";
-import { useTranslations } from "next-intl";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+'use client';
+import RashifalChart from '@/components/Chart/RashifalChart';
+import Dropdown from '@/components/Dropdown';
+import { transitBasedChakra, zodiacSign } from '@/constants/helper';
+import { useTranslations } from 'next-intl';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useMemo, useState } from 'react';
 
 const Rashifal = () => {
   const router = useRouter();
   const t = useTranslations();
   const pathname = usePathname();
   const searchparams = useSearchParams();
-  const asc = searchparams.get("asc") ?? 1;
-  const moon = searchparams.get("moon") ?? 1;
+  const asc = searchparams.get('asc') ?? 1;
+  const moon = searchparams.get('moon') ?? 1;
   const [selectedAscendant, setSelectedAscendant] = useState<number>(
     Number(asc)
   );
@@ -31,7 +31,7 @@ const Rashifal = () => {
   };
 
   const handlePlanetPosition = (selectedValue: number) => {
-    if (selectedValue) {  
+    if (selectedValue) {
       return transitBasedChakra(selectedValue);
     }
     return null;
@@ -61,7 +61,7 @@ const Rashifal = () => {
             {ascendantPlanetaryPosition && (
               <RashifalChart chartData={ascendantPlanetaryPosition} />
             )}
-            {t("chart.asc")}
+            {t('chart.asc')}
           </div>
           <div className="flex flex-col gap-2 items-center ">
             <Dropdown
@@ -73,7 +73,7 @@ const Rashifal = () => {
             {moonPlanetaryPosition && (
               <RashifalChart chartData={moonPlanetaryPosition} />
             )}
-            {t("chart.moon")}
+            {t('chart.moon')}
           </div>
         </div>
       </div>

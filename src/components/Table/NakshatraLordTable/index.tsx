@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
-import React from "react";
+import { useTranslations } from 'next-intl';
+import React from 'react';
 
 const NakshatraLordTable = ({ uniqueLords }: { uniqueLords: string[] }) => {
-  const t = useTranslations("nakshatraLord");
+  const t = useTranslations('nakshatraLord');
   return (
     <div>
-      <p className="text-center text-2xl font-semibold">{t("title")}</p>
+      <p className="text-center text-2xl font-semibold">{t('title')}</p>
       <div className="grid grid-cols-1">
         {uniqueLords.map((lord, index) => (
           <div
