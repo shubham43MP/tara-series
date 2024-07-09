@@ -98,8 +98,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house1"
         />
         <text
-          x="396"
-          y="392"
+          x="385"
+          y="380"
           font-family="Verdana"
           font-size="20"
           fontWeight={600}
@@ -132,8 +132,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house3"
         />
         <text
-          x="230"
-          y="255"
+          x="210"
+          y="257"
           font-family="Verdana"
           font-size="20"
           fontWeight={600}
@@ -149,8 +149,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house4"
         />
         <text
-          x="380"
-          y="405"
+          x="360"
+          y="407"
           font-family="Verdana"
           font-size="20"
           fontWeight={600}
@@ -166,7 +166,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house5"
         />
         <text
-          x="230"
+          x="210"
           y="555"
           font-family="Verdana"
           font-size="20"
@@ -184,7 +184,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         />
         <text
           x="240"
-          y="575"
+          y="585"
           font-family="Verdana"
           font-size="20"
           fontWeight={600}
@@ -200,8 +200,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house7"
         />
         <text
-          x="391"
-          y="423"
+          x="385"
+          y="430"
           font-family="Verdana"
           font-size="20"
           fontWeight={600}
@@ -217,8 +217,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house8"
         />
         <text
-          x="540"
-          y="575"
+          x="538"
+          y="580"
           font-family="Verdana"
           font-size="20"
           fontWeight={600}
@@ -234,7 +234,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house9"
         />
         <text
-          x="560"
+          x="565"
           y="555"
           font-family="Verdana"
           font-size="20"
@@ -268,7 +268,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house11"
         />
         <text
-          x="558"
+          x="560"
           y="255"
           font-family="Verdana"
           font-size="20"
@@ -285,8 +285,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
           id="house12"
         />
         <text
-          x="545"
-          y="242"
+          x="538"
+          y="235"
           font-family="Verdana"
           fontWeight={600}
           font-size="20"
