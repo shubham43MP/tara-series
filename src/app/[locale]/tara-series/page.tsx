@@ -67,9 +67,6 @@ export default function Home() {
         alt="background"
         src={Images.backgroundImage2}
       />
-      <Link href={'/transit'} className="home--page-transitbutton" >
-        Go To Transit
-      </Link>
       <div>
         <AutoCompleteSelect
           options={nakshatraList.map((nak) => ({
