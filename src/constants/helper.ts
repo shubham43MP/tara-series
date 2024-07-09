@@ -149,6 +149,15 @@ export const transitBasedChakra = (ascendant: number) => {
   return resultant;
 };
 
+const transposeArray = <T>(array: T[]): T[][] => {
+  const transposed: T[][] = [[], [], []];
+  array.forEach((item, index) => {
+    const col = Math.floor(index / 9);
+    transposed[col].push(item);
+  });
+  return transposed;
+};
+
 export {
   nakshatraList,
   taraChakra,
@@ -156,4 +165,5 @@ export {
   rashifalzero,
   rashifal1,
   zodiacSign,
+  transposeArray
 };

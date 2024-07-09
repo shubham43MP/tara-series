@@ -3,7 +3,7 @@ import AutoCompleteSelect from "@/components/AutoComplete";
 import NakshatraLordTable from "@/components/Table/NakshatraLordTable";
 import NakshatraTable from "@/components/Table/NakshatraTable";
 import NavtaraTable from "@/components/Table/NavtaraTable";
-import { nakshatraList, taraChakra } from "@/constants/helper";
+import { nakshatraList, taraChakra, transposeArray } from "@/constants/helper";
 import Images from "@/constants/images";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -37,15 +37,6 @@ export default function Home() {
       ...nakshatraList.slice(0, index),
     ];
     setOrderedNakshatra(reordered);
-  };
-
-  const transposeArray = (array: Nakshatra[]): Nakshatra[][] => {
-    const transposed: Nakshatra[][] = [[], [], []];
-    array.forEach((item, index) => {
-      const col = Math.floor(index / 9);
-      transposed[col].push(item);
-    });
-    return transposed;
   };
 
   const transposedNakshatra = transposeArray(orderedNakshatra);
