@@ -129,6 +129,7 @@ const currentTransit: currentTransitData = {
   "11": ["saturn"],
   "12": ["rahu"],
   "6": ["ketu"],
+  "3": ["sun"]
 };
 
 export const transitBasedChakra = (ascendant: number) => {
