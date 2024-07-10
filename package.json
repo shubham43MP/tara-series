@@ -10,7 +10,8 @@
     "lint:fix": "next lint --fix",
     "prepare": "husky",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\"",
-    "check": "prettier --check \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\""
+    "check": "prettier --check \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\"",
+    "lint-staged": "yarn run lint"
   },
   "dependencies": {
     "next": "14.1.0",
