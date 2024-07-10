@@ -7,8 +7,6 @@ import { nakshatraList, taraChakra, transposeArray } from '@/constants/helper';
 import Images from '@/constants/images';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
 interface Nakshatra {
@@ -18,7 +16,6 @@ interface Nakshatra {
 }
 
 export default function Home() {
-  const router = useRouter();
   const [orderedNakshatra, setOrderedNakshatra] =
     useState<Nakshatra[]>(nakshatraList);
   const [selectedNakshatra, setSelectedNakshatra] = useState<{

@@ -68,7 +68,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
 
   return (
     <div className="relative">
-      {Object.keys(chartData).map((key, index) => {
+      {Object.keys(chartData).map(key => {
         const houseNumber = parseInt(key, 10);
         const positionStyles = getPositionStyles(houseNumber);
         const uniquePlanets = Array.from(
