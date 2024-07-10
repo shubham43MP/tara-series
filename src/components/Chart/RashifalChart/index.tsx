@@ -68,7 +68,7 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
 
   return (
     <div className="relative">
-      {Object.keys(chartData).map((key, index) => {
+      {Object.keys(chartData).map(key => {
         const houseNumber = parseInt(key, 10);
         const positionStyles = getPositionStyles(houseNumber);
         const uniquePlanets = Array.from(
@@ -100,8 +100,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="385"
           y="380"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -117,8 +117,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="240"
           y="225"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -134,8 +134,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="210"
           y="257"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -151,8 +151,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="360"
           y="407"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -168,8 +168,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="210"
           y="555"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -185,8 +185,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="240"
           y="585"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -202,8 +202,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="385"
           y="430"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -219,8 +219,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="538"
           y="580"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -236,8 +236,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="565"
           y="555"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -253,8 +253,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="410"
           y="406"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -270,8 +270,8 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="560"
           y="255"
-          font-family="Verdana"
-          font-size="20"
+          fontFamily="Verdana"
+          fontSize="20"
           fontWeight={600}
           fill="black"
         >
@@ -287,9 +287,9 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
         <text
           x="538"
           y="235"
-          font-family="Verdana"
+          fontFamily="Verdana"
           fontWeight={600}
-          font-size="20"
+          fontSize="20"
           fill="black"
         >
           {chartData[12].id}

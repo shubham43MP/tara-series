@@ -3,17 +3,10 @@ import AutoCompleteSelect from '@/components/AutoComplete';
 import NakshatraLordTable from '@/components/Table/NakshatraLordTable';
 import NakshatraTable from '@/components/Table/NakshatraTable';
 import NavtaraTable from '@/components/Table/NavtaraTable';
-import {
-  APP_ROUTES,
-  nakshatraList,
-  taraChakra,
-  transposeArray
-} from '@/constants/helper';
+import { nakshatraList, taraChakra, transposeArray } from '@/constants/helper';
 import Images from '@/constants/images';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 
 interface Nakshatra {
@@ -33,7 +26,6 @@ export default function Home() {
     label: ''
   });
   const t = useTranslations();
-  const router = useRouter();
 
   const handleSelect = (selectedOption: { value: number; label: string }) => {
     setSelectedNakshatra(selectedOption);

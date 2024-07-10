@@ -1,24 +1,17 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import {
-  useParams,
-  usePathname,
-  useRouter,
-  useSearchParams
-} from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { ChangeEvent, useTransition } from 'react';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
-  const params = useParams();
   const searchParams = useSearchParams();
 
   const localActive = useLocale();
   const pathname = usePathname();
 
-  const url = `${pathname}?${searchParams}`;
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = e.target.value;
     const newPath = pathname.replace(`/${localActive}`, `/${nextLocale}`);

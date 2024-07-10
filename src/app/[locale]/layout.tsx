@@ -1,4 +1,5 @@
 // import Header from "@/components/header";
+import { ReactNode } from 'react';
 import Header from '@/components/Header';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
   params: {
     locale: string;
   };
