@@ -14,6 +14,7 @@ const Dropdown = ({
 }) => {
   const t = useTranslations('rashi');
   const onOptionChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
     const value = Number(e.target.value);
     handleSelect(value);
   };

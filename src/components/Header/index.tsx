@@ -3,8 +3,9 @@ import LocalSwitcher from '../LocalSwitcher';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { APP_ROUTES } from '@/constants/helper';
+import React from 'react';
 
-export default function Header() {
+const Header = () => {
   const t = useTranslations();
 
   return (
@@ -33,4 +34,6 @@ export default function Header() {
       </nav>
     </header>
   );
-}
+};
+
+export default React.memo(Header);
