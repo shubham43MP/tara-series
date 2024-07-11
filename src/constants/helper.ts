@@ -1,3 +1,5 @@
+import { convertTransitData, currentDetailedTransit } from './knowledge-base';
+
 interface IRashiFalData {
   [key: number]: {
     id: number;
@@ -120,27 +122,16 @@ const rashifal1: IRashiFalData = {
   12: { id: 4, planets: ['ketu'] }
 };
 
-interface currentTransitData {
-  [key: string]: string[];
-}
-
-const currentTransit: currentTransitData = {
-  '2': ['jupiter'],
-  '11': ['saturn'],
-  '12': ['rahu'],
-  '6': ['ketu'],
-  '3': ['sun']
-};
-
 export const transitBasedChakra = (ascendant: number) => {
   let resultant: IRashiFalData = {};
   let zodiac = ascendant;
+  const currentCalculatedTransit = convertTransitData(currentDetailedTransit);
   for (let house = 1; house <= 12; house++) {
     resultant = {
       ...resultant,
       [house]: {
         id: zodiac,
-        planets: currentTransit[zodiac] || []
+        planets: currentCalculatedTransit[zodiac] || []
       }
     };
     if (zodiac === 12) {
@@ -164,6 +155,18 @@ const APP_ROUTES = {
   TARASERIES: '/tara-series'
 };
 
+/**
+ *
+ * convert the date format from "YYYY-MM-DD" to "D MMMM YYYY"
+ */
+const formatDate = (dateStr: string): string => {
+  const date = new Date(dateStr);
+  const day = date.getDate();
+  const month = date.toLocaleString('default', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
+};
+
 export {
   nakshatraList,
   taraChakra,
@@ -172,5 +175,6 @@ export {
   rashifal1,
   zodiacSign,
   APP_ROUTES,
+  formatDate,
   transposeArray
 };
