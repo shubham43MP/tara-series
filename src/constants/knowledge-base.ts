@@ -32,34 +32,6 @@ export const planetStates = {
   }
 };
 
-// export const currentDetailedTransit = {
-//   jupiter: {
-//     zodiac: 2,
-//     entryDate: '2024-05-01',
-//     exitDate: '2025-05-09'
-//   },
-//   venus: {
-//     zodiac: 5,
-//     entryDate: '2024-07-01',
-//     exitDate: '2024-08-13'
-//   },
-//   saturn: {
-//     zodiac: 11,
-//     entryDate: '2023-01-17',
-//     exitDate: '2025-03-29'
-//   },
-//   rahu: {
-//     zodiac: 12,
-//     entryDate: '2023-10-30',
-//     exitDate: '2025-04-18'
-//   },
-//   ketu: {
-//     zodiac: 6,
-//     entryDate: '2023-10-30',
-//     exitDate: '2025-04-18'
-//   }
-// };
-
 export interface TransitDetails {
   zodiac: number;
   entryDate: string;
