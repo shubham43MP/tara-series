@@ -36,6 +36,7 @@ const AutoCompleteSelect = ({
   };
 
   const handleHideList = (e: React.FocusEvent<HTMLInputElement>) => {
+    e.preventDefault();
     setTimeout(() => setShowList(false), 100);
   };
 

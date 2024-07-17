@@ -1,7 +1,9 @@
 {
-  "name": "nextlingo",
+  "name": "astro-app",
   "version": "0.1.0",
   "private": true,
+  "author": "Shubham Dixit",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -39,5 +41,9 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "engines" : { 
+    "npm" : ">=8.0.0",
+    "node" : ">=20.0.0 <21.0.0"
   }
 }

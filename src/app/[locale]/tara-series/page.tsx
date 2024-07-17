@@ -70,14 +70,16 @@ export default function Home() {
             label: nak.name
           }))}
           handleSelect={handleSelect}
-          searchPlaceholder={t('generic.searchConstellation')}
+          searchPlaceholder={t('generic.yourBirthConsteallation')}
         />
-        {selectedNakshatra.label.length > 0 && (
-          <p className="text-center mt-2">
-            Your birth constellation:{' '}
-            {t(`nakshatraList.${selectedNakshatra.label}`)}
-          </p>
-        )}
+        <p className="text-center mt-2">
+          {t('generic.yourBirthConsteallation')}:
+          <span className="mx-1">
+            {selectedNakshatra.label.length > 0
+              ? t(`nakshatraList.${selectedNakshatra.label}`)
+              : 'Not Selected'}
+          </span>
+        </p>
       </div>
       <div className="tables flex items-center gap-5">
         <NavtaraTable taraChakra={taraChakra} />

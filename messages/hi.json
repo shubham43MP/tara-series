@@ -1,10 +1,10 @@
 {
   "generic": {
-    "searchConstellation": "आपका जन्म नक्षत्र...",
     "selectAscendant": "जन्म लग्न",
     "selectMoonRashi": "जन्म राशि",
     "transit": "गोचर",
-    "taraSeries": "तारा श्रृंखला"
+    "taraSeries": "तारा श्रृंखला",
+    "yourBirthConsteallation": "आपका जन्म नक्षत्र"
   },
   "home": {
     "title": "हिंदू एस्ट्रो",
