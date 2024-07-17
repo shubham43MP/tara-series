@@ -1,10 +1,10 @@
 {
   "generic": {
-    "searchConstellation": "Your Birth Constellation...",
     "selectAscendant": "Select Ascendant",
     "selectMoonRashi": "Select Moon Sign",
     "transit": "Transit",
-    "taraSeries": "Tara Series"
+    "taraSeries": "Tara Series",
+    "yourBirthConsteallation": "Your Birth Constellation"
   },
   "home": {
     "title": "Hindu Astro",

@@ -31,3 +31,10 @@ The home page is basically the Tara Series Page that can be accessed at [Tara Se
 - Transit page can be accessed at [Transit Page](http://localhost:3000/hi/transit)
 
 ![Tara Series Calculator](/public/github-asset/transit.png?raw=true)
+
+## Development Environment
+
+- NodeJS v20.15.1
+- NPM v10.7.0
+- OS - MacOS 13 and Ubuntu Debian 20.04
+- Yarn - v1.22.19
