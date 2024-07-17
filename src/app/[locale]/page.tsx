@@ -1,19 +1,15 @@
 'use client';
 import AutoCompleteSelect from '@/components/AutoComplete';
+import { AutoCompletOptions } from '@/components/AutoComplete/autocomplete.interface';
 import NakshatraLordTable from '@/components/Table/NakshatraLordTable';
 import NakshatraTable from '@/components/Table/NakshatraTable';
 import NavtaraTable from '@/components/Table/NavtaraTable';
+import { Nakshatra } from '@/constants/common.types';
 import { nakshatraList, taraChakra, transposeArray } from '@/constants/helper';
 import Images from '@/constants/images';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useMemo, useState } from 'react';
-
-interface Nakshatra {
-  id: number;
-  name: string;
-  lord: string;
-}
 
 export default function Home() {
   const [orderedNakshatra, setOrderedNakshatra] =
@@ -27,7 +23,7 @@ export default function Home() {
   });
   const t = useTranslations();
 
-  const handleSelect = (selectedOption: { value: number; label: string }) => {
+  const handleSelect = (selectedOption: AutoCompletOptions) => {
     setSelectedNakshatra(selectedOption);
     const index = nakshatraList.findIndex(
       nak => nak.id === selectedOption.value

@@ -12,6 +12,8 @@ interface IRashiFalData {
   };
 }
 
+const containerClass = 'flex flex-wrap gap-1.5 items-center justify-center';
+
 const getPositionStyles = (houseNumber: number) => {
   switch (houseNumber) {
     case 1:
@@ -63,8 +65,6 @@ const RashifalChart: React.FC<IRashiFalData> = ({ chartData }) => {
   if (!chartData || Object.keys(chartData).length !== 12 || !isValidData()) {
     return 'Data is wrong';
   }
-
-  let containerClass = 'flex flex-wrap gap-1.5 items-center justify-center';
 
   return (
     <div className="relative">
