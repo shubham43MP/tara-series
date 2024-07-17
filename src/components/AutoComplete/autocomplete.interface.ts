@@ -1,5 +1,10 @@
+export interface AutoCompletOptions {
+  value: number;
+  label: string
+}
+
 export interface AutoCompleteProps {
-  options: { value: number; label: string }[];
-  handleSelect: (selectedOption: { value: number; label: string }) => void;
+  options: AutoCompletOptions[];
+  handleSelect: (selectedOption: AutoCompletOptions) => void;
   searchPlaceholder: string;
 }
