@@ -4,7 +4,7 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "prisma.showPrismaDataPlatformNotification": false,
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Cobalt2",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.fontLigatures": true,
