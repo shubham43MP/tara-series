@@ -1,5 +1,5 @@
 export interface Nakshatra {
-    id: number;
-    name: string;
-    lord: string;
-  }
+  id: number;
+  name: string;
+  lord: string;
+}

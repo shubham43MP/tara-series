@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # Using npm for Next.js
+    directory: "/" # Root directory of your project
+    schedule:
+      interval: "weekly" # Updates will run weekly
+    ignore:
+      - dependency-name: "next-intl" # Exclude next-intl from updates
+    open-pull-requests-limit: 5 # Limits the number of PRs Dependabot opens
+    reviewers:
+      - "your-github-username" # Replace with your GitHub username

@@ -1,7 +1,8 @@
 /**
  * A repo of debilitation and exhaltation of planets in zodiac
  */
-export const planetStates = {
+
+const planetStates = {
   jupiter: {
     debilitation: 10,
     exhaltation: 4
@@ -33,6 +34,7 @@ export const planetStates = {
 };
 
 export interface TransitDetails {
+  id?: number;
   zodiac: number;
   entryDate: string;
   exitDate: string;
@@ -46,34 +48,6 @@ interface CurrentTransitData {
   [key: number]: string[];
 }
 
-export const currentDetailedTransit: CurrentDetailedTransit = {
-  jupiter: {
-    zodiac: 2,
-    entryDate: '2024-05-01',
-    exitDate: '2025-05-09'
-  },
-  venus: {
-    zodiac: 5,
-    entryDate: '2024-07-01',
-    exitDate: '2024-08-13'
-  },
-  saturn: {
-    zodiac: 11,
-    entryDate: '2023-01-17',
-    exitDate: '2025-03-29'
-  },
-  rahu: {
-    zodiac: 12,
-    entryDate: '2023-10-30',
-    exitDate: '2025-04-18'
-  },
-  ketu: {
-    zodiac: 6,
-    entryDate: '2023-10-30',
-    exitDate: '2025-04-18'
-  }
-};
-
 /**
  * This function will retun mappable planets in this format
   '2': ['jupiter'],
@@ -83,7 +57,7 @@ export const currentDetailedTransit: CurrentDetailedTransit = {
   '3': ['sun']
  */
 
-export const convertTransitData = (
+const convertTransitData = (
   detailedTransit: CurrentDetailedTransit
 ): CurrentTransitData => {
   const transitData: CurrentTransitData = {};
@@ -98,3 +72,5 @@ export const convertTransitData = (
 
   return transitData;
 };
+
+export { convertTransitData, planetStates };

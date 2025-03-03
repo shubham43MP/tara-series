@@ -1,6 +1,6 @@
 export interface AutoCompletOptions {
   value: number;
-  label: string
+  label: string;
 }
 
 export interface AutoCompleteProps {

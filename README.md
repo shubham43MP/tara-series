@@ -1,40 +1,114 @@
-# Hindu Astrology Application
+# Setup Instructions
 
-This application gives a basic tenets of Hindu Astrology like Tara Series and Transit
+## Clone the Repository  
+Run the following command to **download the project** to your local machine:  
+```sh
+git clone <repository-url>
+```
+Replace `<repository-url>` with the actual URL of your Git repository.  
 
-## Getting Started
+## Navigate to the Project Folder  
+Move into the project folder after cloning:  
+```sh
+cd <project-folder>
+```
+Replace `<project-folder>` with the name of the cloned project directory.  
 
-First, run the development server:
+## Install Dependencies  
+Run the following command to **install all required dependencies** using Yarn:  
+```sh
+yarn install
+```
+This ensures all necessary packages are installed.  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Start the Development Server  
+Run the following command to **start the Next.js development server**:  
+```sh
+yarn run dev
+```
+By default, this runs the server on `http://localhost:3000/`.  
+
+## Expose Local Server to the Internet (Optional)  
+If you want to expose your local development server using **Ngrok**, run:  
+```sh
+ngrok http 3000
+```
+Ngrok will provide a **public URL** that can be accessed from anywhere or deploy this app and use that public URL.  
+
+---
+
+## Google Sheets Table  
+
+Download the CSV file: **[table.csv](./table.csv)**  
+
+| Planet  | ID  | Zodiac | Entry Date | Exit Date  |
+|---------|----:|-------:|------------|------------|
+| jupiter |  0  |   3   | 2024-05-01 | 2025-05-09 |
+| venus   |  1  |   7   | 2024-07-01 | 2024-08-13 |
+| saturn  |  2  |  11   | 2023-01-17 | 2025-03-29 |
+| rahu    |  3  |  12   | 2023-10-30 | 2025-04-18 |
+| ketu    |  4  |   6   | 2023-10-30 | 2025-04-18 |
+
+---
+
+## Google Apps Script  
+
+Open **Extensions > Apps Script** in Google Sheets, delete any existing code, and paste the following script:  
+
+```javascript
+function onEdit(e) {
+  var sheetName = "Sheet1"; // ✅ Update Sheet Name if needed
+  var sheet = e.source.getSheetByName(sheetName);
+  
+  if (!sheet) {
+    Logger.log("❌ Error: Sheet '" + sheetName + "' not found.");
+    return;
+  }
+
+  var editedRange = e.range; // Get the edited cell range
+  Logger.log("📌 Edited Cell: " + editedRange.getA1Notation());
+
+  var data = sheet.getDataRange().getValues(); // ✅ Fetch all data
+  if (data.length < 2) { // Ensure there's actual data (excluding headers)
+    Logger.log("❌ Error: No data found in '" + sheetName + "' (excluding headers).");
+    return;
+  }
+
+  var latestData = {};
+  
+  // ✅ Assuming first row is headers: ['Planet', 'ID', 'Zodiac', 'EntryDate', 'ExitDate']
+  for (var i = 1; i < data.length; i++) { // Start from row 1 to skip headers
+    if (data[i].length < 5) {
+      Logger.log("⚠️ Skipping row " + (i + 1) + " due to missing values.");
+      continue;
+    }
+
+    var planet = data[i][0]?.toString().trim(); // Planet Name
+    latestData[planet] = {
+      id: data[i][1], // ID
+      zodiac: data[i][2], // Zodiac Sign
+      entryDate: data[i][3], // Entry Date
+      exitDate: data[i][4]  // Exit Date
+    };
+  }
+
+  var url = "https://your-public-api-url.com/locale/api/webhook"; // ✅ Replace with your actual public API URL
+
+  var options = {
+    method: "post",
+    contentType: "application/json",
+    payload: JSON.stringify(latestData),
+    muteHttpExceptions: true
+  };
+
+  try {
+    var response = UrlFetchApp.fetch(url, options);
+    Logger.log("✅ Response: " + response.getContentText());
+  } catch (error) {
+    Logger.log("❌ Error sending request: " + error.toString());
+  }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Tara Series Page
-
-Tara Series is a very important table in Astrology that determines the overall favourability of the Nakshatras for an Individual. Tara Series is a detailed outlook of the Nakshatra and Planetary Favourability.
-The home page is basically the Tara Series Page that can be accessed at [Tara Series Page](http://localhost:3000/hi/tara-series)
-
-![Tara Series Calculator](/public/github-asset/tara-series.png?raw=true)
-
-## Transit Page
-
-- Transit also called as `Gochar` in Hindi, refers to the planetray movement. With transits, Astrology asses the impact of the current planetary position on a person's kundali. It takes into account Lagna(Ascendant) as well as the Moon Zodiac Sign and the current Predictions can be made accordingly.
-- Transit page can be accessed at [Transit Page](http://localhost:3000/hi/transit)
-
-![Tara Series Calculator](/public/github-asset/transit.png?raw=true)
-
-## Development Environment
-
-- NodeJS v20.15.1
-- NPM v10.7.0
-- OS - MacOS 13 and Ubuntu Debian 20.04
-- Yarn - v1.22.19
+Replace `"https://your-public-api-url.com/locale/api/webhook"` with your actual **public API URL**.  
+Edit your Google Sheets table, open **Apps Script**, and check the logs (`View > Execution Log`) to ensure the **POST request** is triggered and data is sent correctly.
