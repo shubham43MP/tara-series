@@ -16,7 +16,6 @@ const TransitTable = () => {
         {(Object.keys(latestData) as Array<keyof typeof latestData>).map(
           item => {
             const currentPlanet = latestData[item];
-            console.log({ msg: 'this is the currentPlanet', currentPlanet });
             return (
               <tr key={currentPlanet.id}>
                 <td className="m-2 p-2">

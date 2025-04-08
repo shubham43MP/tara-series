@@ -19,8 +19,6 @@ interface IRashiFalData {
 const ChartContainer = () => {
   const { latestData } = useLatestData();
 
-  console.log({ msg: 'inside page', data: latestData });
-
   const transitBasedChakra = (ascendant: number) => {
     let resultant: IRashiFalData = {};
     let zodiac = ascendant;

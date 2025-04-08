@@ -27,7 +27,6 @@ const fetchLatestData = async () => {
     if (!res.ok) throw new Error('Failed to fetch data');
 
     const data = await res.json();
-    console.log({ msg: 'logging', data: data.latestData });
     return data.latestData || defaultData;
   } catch (error) {
     console.error('Error fetching latest data:', error);
