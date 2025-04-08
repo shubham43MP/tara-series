@@ -1,5 +1,3 @@
-import { convertTransitData, currentDetailedTransit } from './knowledge-base';
-
 interface IRashiFalData {
   [key: number]: {
     id: number;
@@ -120,25 +118,6 @@ const rashifal1: IRashiFalData = {
   10: { id: 2, planets: ['ketu'] },
   11: { id: 3, planets: ['ketu'] },
   12: { id: 4, planets: ['ketu'] }
-};
-
-export const transitBasedChakra = (ascendant: number) => {
-  let resultant: IRashiFalData = {};
-  let zodiac = ascendant;
-  const currentCalculatedTransit = convertTransitData(currentDetailedTransit);
-  for (let house = 1; house <= 12; house++) {
-    resultant = {
-      ...resultant,
-      [house]: {
-        id: zodiac,
-        planets: currentCalculatedTransit[zodiac] || []
-      }
-    };
-    if (zodiac === 12) {
-      zodiac = 1;
-    } else zodiac++;
-  }
-  return resultant;
 };
 
 const transposeArray = <T>(array: T[]): T[][] => {

@@ -2,12 +2,42 @@
 import RashifalChart from '@/components/Chart/RashifalChart';
 import Dropdown from '@/components/Dropdown';
 import TransitTable from '@/components/TransitTable';
-import { transitBasedChakra, zodiacSign } from '@/constants/helper';
+import { zodiacSign } from '@/constants/helper';
 import { useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useMemo, useState } from 'react';
+import { useLatestData } from '@/components/TransitTable/tableApi';
+import { convertTransitData } from '@/constants/knowledge-base';
+
+interface IRashiFalData {
+  [key: number]: {
+    id: number;
+    planets: string[];
+  };
+}
 
 const ChartContainer = () => {
+  const { latestData } = useLatestData();
+
+  const transitBasedChakra = (ascendant: number) => {
+    let resultant: IRashiFalData = {};
+    let zodiac = ascendant;
+    const currentCalculatedTransit = convertTransitData(latestData);
+    for (let house = 1; house <= 12; house++) {
+      resultant = {
+        ...resultant,
+        [house]: {
+          id: zodiac,
+          planets: currentCalculatedTransit[zodiac] || []
+        }
+      };
+      if (zodiac === 12) {
+        zodiac = 1;
+      } else zodiac++;
+    }
+    return resultant;
+  };
+
   const router = useRouter();
   const t = useTranslations();
   const pathname = usePathname();
@@ -38,10 +68,7 @@ const ChartContainer = () => {
     return null;
   };
 
-  const ascendantPlanetaryPosition = useMemo(
-    () => handlePlanetPosition(selectedAscendant),
-    [selectedAscendant]
-  );
+  const ascendantPlanetaryPosition = handlePlanetPosition(selectedAscendant);
 
   const moonPlanetaryPosition = useMemo(
     () => handlePlanetPosition(selectedMoon),
